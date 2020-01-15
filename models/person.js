@@ -5,6 +5,10 @@ class Person {
         this.surname = surname
         this.dob = dob
     }
+
+    fullName(){
+        return this.firstName + " " + this.surname 
+    }
 }
 
 module.exports = Person

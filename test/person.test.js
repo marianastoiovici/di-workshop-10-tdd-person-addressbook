@@ -19,5 +19,12 @@ describe("Person", function(){
         expect(person.firstName).to.equal("Amy")
     })
 
+    it("should return a full name", function(){
+        var person = new Person("Amy", "Something", "15 June 1985")
+
+        expect(person.fullName()).to.equal("Amy Something")
+    })
+
+
 
 })

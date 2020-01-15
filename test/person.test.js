@@ -26,6 +26,14 @@ describe("Person", function(){
         expect(person.fullName()).to.equal("Amy Something")
     })
 
+    it("should accept new emails and add them to the array of emails", function(){
+        var person = new Person("Teo", "Bloggs", "11 march 2000")
+
+        person.addEmail("teo@example.com")
+        person.addEmail("teo@workexample.com")
+
+        expect(person.emails).to.deep.equal(["teo@example.com","teo@workexample.com"])
+    })
 
 
 })

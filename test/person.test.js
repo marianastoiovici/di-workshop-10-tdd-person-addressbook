@@ -13,4 +13,11 @@ describe("Person", function(){
         expect(person.dob).to.equal("15 June 1985")
     })
 
+    it("should capitalize first name", function(){
+        var person = new Person("amy", "Something", "15 June 1985")
+
+        expect(person.firstName).to.equal("Amy")
+    })
+
+
 })

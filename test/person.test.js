@@ -11,6 +11,7 @@ describe("Person", function(){
         expect(person.firstName).to.equal("Mari")
         expect(person.surname).to.equal("Stoiovici")
         expect(person.dob).to.equal("15 June 1985")
+        expect(person.emails).to.deep.equal([])
     })
 
     it("should capitalize first name", function(){

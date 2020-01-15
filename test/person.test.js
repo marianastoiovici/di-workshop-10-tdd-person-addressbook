@@ -35,5 +35,13 @@ describe("Person", function(){
         expect(person.emails).to.deep.equal(["teo@example.com","teo@workexample.com"])
     })
 
+    it("should accept new phone numbers and add them to the array of phone numbers", function(){
+        var person = new Person("Teo", "Bloggs", "11 march 2000")
+
+        person.addPhoneNumber("07340345676")
+
+        expect(person.phoneNumbers).to.deep.equal(["07340345676"])
+    })
+
 
 })

@@ -85,6 +85,8 @@ describe('#returnFormattedDetails', function() {
         expect(lines[6]).to.equal("- test@testingexample.com")
         })
 
+    // TODO: need to finish this implementation
+
     // it('includes empty line and phone number title', function() {
     //     var person = new Person('Joe', 'Bloggs', "1 Jan 1990")
     //     var result = person.returnFormattedDetails()

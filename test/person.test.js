@@ -45,3 +45,61 @@ describe("Person", function(){
 
 
 })
+
+describe('#returnFormattedDetails', function() {
+    it('includes the full name', function() {
+      var person = new Person('Jon', 'Smith', "3 April 1998")
+      var result = person.returnFormattedDetails()
+      var lines = result.split('\n')
+      expect(lines[0]).to.equal('Jon Smith')
+    })
+
+    it('includes a line of dots', function() {
+    var person = new Person('Jon', 'Smith', "3 April 1998")
+    var result = person.returnFormattedDetails()
+    var lines = result.split('\n')
+    expect(lines[1]).to.equal('---------')
+    })
+
+    it('includes dob', function() {
+        var person = new Person('Jon', 'Smith', "3 April 1998")
+        var result = person.returnFormattedDetails()
+        var lines = result.split('\n')
+        expect(lines[2]).to.equal('DOB: 3 April 1998')
+        })
+
+    it('includes empty line and email address title', function() {
+        var person = new Person('Jon', 'Smith', "3 April 1998")
+        var result = person.returnFormattedDetails()
+        var lines = result.split('\n')
+        expect(lines[4]).to.equal("Email Addresses:")
+        })
+
+    it('includes email', function() {
+        var person = new Person('Jon', 'Smith', "3 April 1998")
+        person.addEmail("teo@example.com")
+        person.addEmail("test@testingexample.com")
+        var result = person.returnFormattedDetails()
+        var lines = result.split('\n')
+        expect(lines[5]).to.equal("- teo@example.com")
+        expect(lines[6]).to.equal("- test@testingexample.com")
+        })
+
+    // it('includes empty line and phone number title', function() {
+    //     var person = new Person('Joe', 'Bloggs', "1 Jan 1990")
+    //     var result = person.returnFormattedDetails()
+    //     var lines = result.split('\n')
+    //     expect(result.toString()).to.equal("Joe Bloggs\n----------\nDOB: 1 Jan 1990\n\nEmail Addresses:\n\nPhone Numbers:\n")
+    //     })
+
+    // it('includes phone', function() {
+    //     var person = new Person('Joe', 'Bloggs', "1 Jan 1990")
+    //     person.addPhoneNumber("07654321987")
+    //     person.addEmail("joe@example.com")
+
+    //     var result = person.returnFormattedDetails()
+    //     var lines = result.split('\n')
+    //     expect(lines).to.equal("Joe Bloggs\n----------\nDOB: 1 Jan 1990\n\nEmail Addresses:\n- joe@example.com\n\nPhone Numbers:\n- 07654321987")
+        
+    //     })
+    })
